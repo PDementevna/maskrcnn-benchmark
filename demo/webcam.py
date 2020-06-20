@@ -1,10 +1,13 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
 import argparse
 import cv2
+import sys
+
+sys.path.append("/Users/polini/Documents/Skoltech/development/maskrcnn-benchmark")
 
 from maskrcnn_benchmark.config import cfg
 from predictor import COCODemo
-
+# import predictor
 import time
 
 
@@ -77,4 +80,6 @@ def main():
 
 
 if __name__ == "__main__":
+
+    print(sys.path)
     main()

@@ -35,7 +35,7 @@ python webcam.py --min-image-size 300 --show-mask-heatmaps MODEL.DEVICE cpu
 python webcam.py --config-file ../configs/caffe2/e2e_keypoint_rcnn_R_50_FPN_1x_caffe2.yaml --min-image-size 300 MODEL.DEVICE cpu
 ```
 
-A notebook with the demo can be found in [demo/Mask_R-CNN_demo.ipynb](demo/Mask_R-CNN_demo.ipynb).
+A notebook with the demo can be found in [demo/Mask_R-CNN_demo.ipynb](Mask_R-CNN_demo.ipynb).
 
 ## Installation
 

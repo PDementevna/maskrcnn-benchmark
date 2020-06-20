@@ -55,15 +55,31 @@ def get_extensions():
 
     return ext_modules
 
+# my code
+
+import os
+from distutils.core import setup
+
+folder = os.path.dirname(os.path.realpath(__file__))
+requirements_path = os.path.join(folder, 'requirements.txt')
+install_requires = []
+if os.path.isfile(requirements_path):
+    with open(requirements_path) as f:
+        install_requires = f.read().splitlines()
+
+# ------------
 
 setup(
     name="maskrcnn_benchmark",
     version="0.1",
     author="fmassa",
-    url="https://github.com/facebookresearch/maskrcnn-benchmark",
+    # url="https://github.com/facebookresearch/maskrcnn-benchmark",
     description="object detection in pytorch",
     packages=find_packages(exclude=("configs", "tests",)),
-    # install_requires=requirements,
+    install_requires=install_requires,
     ext_modules=get_extensions(),
     cmdclass={"build_ext": torch.utils.cpp_extension.BuildExtension},
+    package_dir={},
+    # packages=["undeepvo", "undeepvo.utils", "undeepvo.models", "undeepvo.data", "undeepvo.data.supervised", "undeepvo.problems", "undeepvo.criterion"],
+    # install_requires=install_requires
 )
